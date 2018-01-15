@@ -13,8 +13,12 @@ export const getByBusLineNumber = async (lineNumber = 33674) => {
             'codigoLinha': lineNumber
         },
         headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+        withCredentials: true,
+        credentials: 'same-origin',
     });
     
     return data;
