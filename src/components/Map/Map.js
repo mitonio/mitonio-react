@@ -10,7 +10,7 @@ export default class Map extends React.Component {
 
   constructor() {
     super();
-    console.log(Map.defaultProps)
+    
     this.state = {
       busPositions: [30.394844, 31.395844, 32.396844, 33.397844]
     }
