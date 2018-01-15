@@ -1,6 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import { getByBusLineNumber } from '../libs/SPTrans';
+import { authToken, getByBusLineNumber } from '../libs/SPTrans';
  
 const AnyReactComponent = (props) => (
   <div style={{
@@ -18,6 +18,8 @@ export default class Map extends React.Component {
 
   constructor() {
     super();
+
+    authToken();
 
     this.state = {
       busPositions: []
