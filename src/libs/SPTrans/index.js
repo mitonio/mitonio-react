@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const authToken = async () => {
     const { data } = await axios.post('http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar', {
-        'token': '5243fc248bc5f64a2f29f29b106e9b1b6a0985a837063ce76a12e4bea7a325a9',
+        params: {'token': '5243fc248bc5f64a2f29f29b106e9b1b6a0985a837063ce76a12e4bea7a325a9'},
     });
 
     return data;
