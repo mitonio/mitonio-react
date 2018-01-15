@@ -13,12 +13,9 @@ export const getByBusLineNumber = async (lineNumber = 33674) => {
             'codigoLinha': lineNumber
         },
         headers: {
-            'Access-Control-Allow-Origin': 'http://mitonio-react.herokuapp.com',
+            'Access-Control-Allow-Origin': 'localhost:3000',
             'Content-Type': 'application/json',
-        },
-        mode: 'no-cors',
-        withCredentials: true,
-        credentials: 'same-origin',
+        }
     });
     
     return data;
