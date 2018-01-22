@@ -6,7 +6,7 @@ module.exports.loadApi = async (apiKey) => {
   try {
     const data = await Axios.post(`${baseUrl}/Login/Autenticar?token=${apiKey}`);
 
-    return {...data, error: null};
+    return {...data, error: null}; 
   } catch (error) {
     return {data: null, error};
   }
