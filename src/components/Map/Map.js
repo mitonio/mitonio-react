@@ -5,7 +5,7 @@ import findBusStopsByHallNumber from '../../libs/SPTrans/index';
 
 export default class Map extends React.Component {
   static defaultProps = {
-    center: {lat: 59.95, lng: 30.33},
+    center: {lat: -23.6821604, lng: -46.8754899},
     zoom: 11
   };
 
@@ -13,15 +13,19 @@ export default class Map extends React.Component {
     super(props);
     
     this.state = {
-      busStops: {}
+      busStops: []
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     findBusStopsByHallNumber.findBusStopsByHallNumber(8).then(data => {
-      
+      this.setState({
+        busStops: data
+      })
     })
   }
+
+  
 
   render() {
     return (
@@ -31,15 +35,16 @@ export default class Map extends React.Component {
         bootstrapURLKeys={{
           key:'AIzaSyBZZrvhbX3yY76Li9w90NPfrRCyu-wBK8Q',
         }}>
-        {/* {
+        {
           this.state.busStops.map(e => (
             <Marker 
-              key={e}
-              lat={e.px}
-              lng={e.py}
+              key={e.cp}
+              lat={e.py}
+              lng={e.px}
+              text="teste"
             />
           ))
-        }   */}
+        }  
       </GoogleMapReact>
     );
   }

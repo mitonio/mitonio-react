@@ -4,7 +4,6 @@ import markerStyle from './marker_style';
 export default class Marker extends Component {
     constructor(props) {
       super(props);
-      this.state = props;
     }
 
     render = () => {
