@@ -9,12 +9,8 @@ export default class Map extends React.Component {
     zoom: 11
   };
 
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      busStops: []
-    };
+  componentWillMount() {
+    this.setState({ busStops: [] });
   }
 
   componentDidMount() {
@@ -25,8 +21,6 @@ export default class Map extends React.Component {
     })
   }
 
-  
-
   render() {
     return (
       <GoogleMapReact
@@ -36,15 +30,14 @@ export default class Map extends React.Component {
           key:'AIzaSyBZZrvhbX3yY76Li9w90NPfrRCyu-wBK8Q',
         }}>
         {
-          this.state.busStops.map(e => (
+          this.state.busStops.map(stop => (
             <Marker 
-              key={e.cp}
-              lat={e.py}
-              lng={e.px}
-              text="teste"
+              key={stop.cp}
+              lat={stop.py}
+              lng={stop.px}
             />
           ))
-        }  
+        }
       </GoogleMapReact>
     );
   }

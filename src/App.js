@@ -6,7 +6,7 @@ class App extends Component {
   
   render() {
     return (
-      <div style={{width: '100%', height: '60rem'}}>
+      <div className="fullscreen">
         <Map />
       </div>
     );
