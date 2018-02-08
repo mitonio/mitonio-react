@@ -1,8 +1,12 @@
 import Axios from 'axios';
 
 export default ({
-    async findBusStopsByHallNumber(hallNumber) {
+  async findBusStopsByHallNumber(hallNumber) {
+    try {
       const x = await Axios.get(`https://api-mitonio-react.herokuapp.com/bus/${hallNumber}`);
-      return await x.data;
+      return x.data;
+    } catch (err) {
+      console.log(err);
     }
+  },
 });
